@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "start": "npx vuepress dev",
+    "build": "npx vuepress build",
+    "deploy": "bash deploy.sh"
+  },
+  "dependencies": {
+    "dayjs": "^1.6.5",
+    "less": "^3.0.4",
+    "less-loader": "^4.1.0",
+    "vuepress": "0.9.1"
+  }
+}
