@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "start": "npx vuepress dev",
-    "build": "npx vuepress build",
+    "start": "vuepress dev",
+    "build": "vuepress build",
     "deploy": "bash deploy.sh"
   },
   "dependencies": {

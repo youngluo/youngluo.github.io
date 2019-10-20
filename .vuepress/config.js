@@ -13,10 +13,10 @@ module.exports = {
       lang: 'zh-CN'
     }
   },
-  title: 'YoungLuo',
-  description: '独孤求败的个人博客',
+  title: '前端杂谈',
+  description: '修罗的个人博客',
   head: [
-    ['meta', { name: 'keywords', content: '独孤求败,youngluo,前端' }],
+    ['meta', { name: 'keywords', content: '修罗,youngluo,前端' }],
     ['link', { rel: 'icon', href: '/logo.png' }],
     ['link', { rel: 'manifest', href: '/manifest.json' }],
     ['meta', { name: 'theme-color', content: '#338D6D' }],

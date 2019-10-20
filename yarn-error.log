@@ -1,0 +1,38 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn install
+
+PATH: 
+  /usr/local/bin:/usr/local/sbib:/usr/local/opt/php70/sbin:/usr/local/opt/php70/bin:/usr/local/bin:/usr/local/sbib:/usr/local/opt/php70/sbin:/usr/local/opt/php70/sbin:/usr/local/opt/php70/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbib:/usr/local/opt/php70/sbin:/usr/local/opt/php70/bin
+
+Yarn version: 
+  1.19.1
+
+Node version: 
+  10.16.3
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: ENOENT: no such file or directory, copyfile '/Users/young/Library/Caches/Yarn/v6/npm-supports-color-6.1.0-0764abc69c63d5ac842dd4867e8d025e880df8f3-integrity/node_modules/supports-color/browser.js' -> '/Users/young/Documents/workspace/youngluo.github.io/node_modules/@vue/component-compiler-utils/node_modules/supports-color/browser.js'
+
+npm manifest: 
+  {
+    "scripts": {
+      "start": "vuepress dev",
+      "build": "vuepress build",
+      "deploy": "bash deploy.sh"
+    },
+    "dependencies": {
+      "dayjs": "^1.6.5",
+      "less": "^3.0.4",
+      "less-loader": "^4.1.0",
+      "vuepress": "0.9.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
