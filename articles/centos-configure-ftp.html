@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>前端杂谈 | centos 配置 ftp</title>
+    <meta name="description" content="修罗的个人博客">
+    <meta name="keywords" content="修罗,youngluo,前端">
+  <link rel="icon" href="/logo.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#338D6D">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon-152x152.png">
+  <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#338D6D">
+  <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/assets/css/styles.38bd08f8.css" as="style"><link rel="preload" href="/assets/js/app.38bd08f8.js" as="script"><link rel="preload" href="/assets/js/4.8faeaebd.js" as="script"><link rel="prefetch" href="/assets/css/1.styles.5a665903.css"><link rel="prefetch" href="/assets/css/2.styles.cbd24eb2.css"><link rel="prefetch" href="/assets/js/1.5a665903.js"><link rel="prefetch" href="/assets/js/2.cbd24eb2.js"><link rel="prefetch" href="/assets/js/3.0fffe53e.js"><link rel="prefetch" href="/assets/js/5.ad7cfea2.js"><link rel="prefetch" href="/assets/js/6.e3e92c0b.js"><link rel="prefetch" href="/assets/js/7.faa0b71a.js">
+    <link rel="stylesheet" href="/assets/css/styles.38bd08f8.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div><a href="/" class="home-link router-link-active"><img src="/logo.svg" class="logo"><span class="site-name can-hide">
+      前端杂谈
+    </span></a><div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""><!----></div><nav class="nav-links can-hide"><div class="nav-item"><a href="/articles/" class="nav-link router-link-active">我的文章</a></div><div class="nav-item"><a href="/projects/" class="nav-link">我的项目</a></div><div class="nav-item"><a href="/resume/" class="nav-link">我的简历</a></div><a href="https://github.com/youngluo" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header><div class="sidebar-mask"></div><div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/articles/" class="nav-link router-link-active">我的文章</a></div><div class="nav-item"><a href="/projects/" class="nav-link">我的项目</a></div><div class="nav-item"><a href="/resume/" class="nav-link">我的简历</a></div><a href="https://github.com/youngluo" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav><ul class="sidebar-links"><li><a href="/articles/develop-angularjs-application-with-typescript.html" class="sidebar-link">用 TypeScript 开发 AngularJS 应用</a></li><li><a href="/articles/vuepress-quick-start-guide.html" class="sidebar-link">VuePress 快速上手指南</a></li><li><a href="/articles/centos-configure-ftp.html" class="active sidebar-link">centos 配置 ftp</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/articles/centos-configure-ftp.html#更新-yum-源" class="sidebar-link">更新 yum 源</a></li><li class="sidebar-sub-header"><a href="/articles/centos-configure-ftp.html#安装-vsftp" class="sidebar-link">安装 vsftp</a></li><li class="sidebar-sub-header"><a href="/articles/centos-configure-ftp.html#添加-ftp-帐号和目录" class="sidebar-link">添加 ftp 帐号和目录</a></li><li class="sidebar-sub-header"><a href="/articles/centos-configure-ftp.html#添加-user1-用户" class="sidebar-link">添加 user1 用户</a></li><li class="sidebar-sub-header"><a href="/articles/centos-configure-ftp.html#更改用户相应的权限设置" class="sidebar-link">更改用户相应的权限设置</a></li><li class="sidebar-sub-header"><a href="/articles/centos-configure-ftp.html#修改账户密码" class="sidebar-link">修改账户密码</a></li><li class="sidebar-sub-header"><a href="/articles/centos-configure-ftp.html#配置-vsftp" class="sidebar-link">配置 vsftp</a></li><li class="sidebar-sub-header"><a href="/articles/centos-configure-ftp.html#设置开机启动-vsftpd-ftp-服务" class="sidebar-link">设置开机启动 vsftpd ftp 服务</a></li><li class="sidebar-sub-header"><a href="/articles/centos-configure-ftp.html#相关问题解决" class="sidebar-link">相关问题解决</a></li></ul></li></ul></div><div class="page"><div class="content"><h1 id="centos-配置-ftp"><a href="#centos-配置-ftp" aria-hidden="true" class="header-anchor">#</a> centos 配置 ftp</h1><p>最近在学习 linux 下的服务器配置，在 linux 下设置 ftp ，所以在网上查找了一些资料，综合各路大神的经验总结了自己在 centos6.5 下的配置过程。</p><h2 id="更新-yum-源"><a href="#更新-yum-源" aria-hidden="true" class="header-anchor">#</a> 更新 yum 源</h2><div class="language-bash extra-class"><pre class="language-bash"><code>yum check-update
+yum update
+</code></pre></div><h2 id="安装-vsftp"><a href="#安装-vsftp" aria-hidden="true" class="header-anchor">#</a> 安装 vsftp</h2><div class="language-bash extra-class"><pre class="language-bash"><code>yum <span class="token function">install</span> vsftpd -y
+</code></pre></div><h2 id="添加-ftp-帐号和目录"><a href="#添加-ftp-帐号和目录" aria-hidden="true" class="header-anchor">#</a> 添加 ftp 帐号和目录</h2><div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">useradd</span> -d /home/www/ -s /sbin/nologin user1
+</code></pre></div><h2 id="添加-user1-用户"><a href="#添加-user1-用户" aria-hidden="true" class="header-anchor">#</a> 添加 user1 用户</h2><div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 指定 user1 用户的主目录为 /home/www</span>
+-d /home/www/
+
+<span class="token comment"># 限制 user1 用户不能远程登录，只能进行 ftp</span>
+-s /sbin/nologin
+</code></pre></div><h2 id="更改用户相应的权限设置"><a href="#更改用户相应的权限设置" aria-hidden="true" class="header-anchor">#</a> 更改用户相应的权限设置</h2><div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 更改用户 user1 的主目录为 /home</span>
+<span class="token function">usermod</span> -d /home user1
+
+<span class="token comment"># 恢复用户 uer1</span>
+<span class="token function">usermod</span> -s /sbin/bash user1
+</code></pre></div><h2 id="修改账户密码"><a href="#修改账户密码" aria-hidden="true" class="header-anchor">#</a> 修改账户密码</h2><div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">passwd</span> user1
+</code></pre></div><h2 id="配置-vsftp"><a href="#配置-vsftp" aria-hidden="true" class="header-anchor">#</a> 配置 vsftp</h2><p>编辑 vsftp 配置文件：</p><div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">vi</span> /etc/vsftpd/vsftpd.conf
+</code></pre></div><p>将配置文件中 <code>anonymous_enable=YES</code> 改为 <code>anonymous_enable=NO</code> 禁止匿名访问。</p><p>限制用户只能访问 <code>/home/www</code>，不能访问其他路径：</p><div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 限制访问自身目录</span>
+<span class="token assign-left variable">chroot_list_enable</span><span class="token operator">=</span>YES
+
+<span class="token comment"># 指定用户列表文件，该文件用于控制哪些用户可以切换到用户家目录的上级目录，每个用户名一行</span>
+<span class="token assign-left variable">chroot_list_file</span><span class="token operator">=</span>/etc/vsftpd/chroot_list
+</code></pre></div><p>以上操作可有以下几种搭配：</p><ul><li><p>当 <code>chroot_list_enable=YES</code><code>chroot_local_user=YES</code> 时，在 <code>/etc/vsftpd/chroot_list</code> 文件中列出的用户，可以切换到其他目录；未在文件中列出的用户，不能切换到其他目录。</p></li><li><p>当 <code>chroot_list_enable=YES</code><code>chroot_local_user=NO</code> 时，在 <code>/etc/vsftpd/chroot_list</code> 文件中列出的用户，不能切换到其他目录；未在文件中列出的用户，可以切换到其他目录。</p></li><li><p>当 <code>chroot_list_enable=NO</code><code>chroot_local_user=YES</code> 时，所有的用户均不能切换到其他目录。</p></li><li><p>当 <code>chroot_list_enable=NO</code><code>chroot_local_user=NO</code> 时，所有的用户均可以切换到其他目录。</p></li></ul><h2 id="设置开机启动-vsftpd-ftp-服务"><a href="#设置开机启动-vsftpd-ftp-服务" aria-hidden="true" class="header-anchor">#</a> 设置开机启动 vsftpd ftp 服务</h2><div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">chkconfig</span> vsftpd on
+
+<span class="token comment"># 启动 vsftp 服务并测试登录</span>
+
+<span class="token comment"># 启动服务</span>
+<span class="token function">service</span> vsftpd start
+
+<span class="token comment"># 重启服务</span>
+<span class="token function">service</span> vsftpd restart
+
+<span class="token comment"># 停止服务</span>
+<span class="token function">service</span> vsftpd stop
+</code></pre></div><h2 id="相关问题解决"><a href="#相关问题解决" aria-hidden="true" class="header-anchor">#</a> 相关问题解决</h2><p>如果登录 ftp 后，不能上传文件和创建文件夹，需要设置写入权限</p><div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 设置 /home 目录下的所有文件及子目录的文件具备读、写、可执行权限</span>
+<span class="token function">chmod</span> -R <span class="token number">777</span> /home
+
+<span class="token comment"># 是递归遍历子目录</span>
+-R
+</code></pre></div></div><div class="content edit-link"><!----><div class="last-updated"><span class="prefix">上次更新: </span><span class="time">2018-6-6 6:35:57 PM</span></div></div><div class="content page-nav"><p class="inner"><span class="prev">
+        ← <a href="/articles/vuepress-quick-start-guide.html" class="prev">
+          VuePress 快速上手指南
+        </a></span><!----></p></div></div></div></div>
+    <script src="/assets/js/app.38bd08f8.js" defer></script><script src="/assets/js/4.8faeaebd.js" defer></script>
+  </body>
+</html>
